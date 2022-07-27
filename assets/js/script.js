@@ -11,7 +11,7 @@ $(function () {
         var windowsize = $window.width();
         if (windowsize < 768) {
             $('.nav a').on('click', function(){
-                $('.navbar-toggle').click() //bootstrap 3.x by Richard
+                $('.navbar-toggle').click() 
             });
         }
     }
@@ -155,11 +155,7 @@ $(function () {
         $btns = null;
       },
 
-      // Re layout shuffle when images load. This is only needed
-      // below 768 pixels because the .picture-item height is auto and therefore
-      // the height of the picture-item is dependent on the image
-      // I recommend using imagesloaded to determine when an image is loaded
-      // but that doesn't support IE7
+
       listen = function() {
         var debouncedLayout = $.throttle( 300, function() {
           $grid.shuffle('update');
@@ -184,7 +180,7 @@ $(function () {
           proxyImage.src = this.src;
         });
 
-        // Because this method doesn't seem to be perfect.
+
         setTimeout(function() {
           debouncedLayout();
         }, 500);
@@ -196,6 +192,6 @@ $(function () {
     }( jQuery ));
 
     if($('#grid').length >0 ) { 
-      shuffleme.init(); //filter portfolio
+      shuffleme.init();
     };
 }());
